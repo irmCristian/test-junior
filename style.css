@@ -1,0 +1,167 @@
+* {
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: rgb(255, 255, 255);;
+}
+/*    MODAL */
+
+.cart__container {
+    background-color: rgb(243, 243, 247);
+    width: 430px;
+    height: 100vh;
+     display: flex; 
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    right: -100%;
+    top: 0;
+    transition: ease-in-out 0.3s;
+}
+.overlay {
+    background: rgba(0, 0, 0, 0.64);;
+    transition: 300ms ease-out;
+    opacity: 1;
+}
+
+.close__cart {
+    max-width: 30px;
+    position: absolute;
+    left: -50px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.close__cart:hover {
+    transform: rotate(180deg);
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+
+.cart__info h2 {
+    font-weight: 500;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.cart__info {
+    font-size: 14px;
+}
+
+
+.cart__info img {
+    width: 100%;
+    max-width: 314px;
+    padding: 4px;
+}
+
+/* END   MODAL */
+
+
+/* BUTTONS */
+.button__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+}
+
+.btn__left {
+    padding: 20px;
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);
+    border: 0;
+    border-radius: 35px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn__left:active{
+    color:rgb(255, 106, 0);  
+}
+.btn__left:hover{
+    background-color:rgb(224, 178, 145) ;
+}
+.btn__right{
+    padding: 20px;
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);
+    border: 0;
+    border-radius: 35px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn__right:hover{
+    background-color:rgb(224, 178, 145) ;
+}
+.btn__right:active{
+    color:rgb(255, 106, 0);  
+}
+
+/* END BUTTONS */
+
+
+.product__container{
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+ padding-top: 30px;
+ padding-bottom: 30px;
+ width: 100%;
+ margin-left: 40px;
+}
+
+.product__img{
+    width: 50px;
+}
+.product__img img{
+    max-width: 40px;
+    
+}
+.product_wrp{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.product__info{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    
+}
+ .product__info::after{
+    content: "";
+    width: 330px;
+    height: 1px;
+    background-color: #dddddd;
+    text-align: center;
+    
+    z-index: -999;
+} 
+
+small{
+    padding-top: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    padding-left: 10px;
+}
