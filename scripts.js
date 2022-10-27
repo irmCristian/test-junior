@@ -6,23 +6,24 @@ const overlay = document.querySelector('.overlay');
 const buttonContainer = document.querySelector('.button__container');
 const cart = document.querySelector('.cart');
 const cartInfo = document.querySelector('.cart__info');
+const addAllProductsHere = document.querySelector('.here_enter_products')
 
 
 function openModal() {
     modal.style.right = '0';
     buttonContainer.classList.add('overlay');
     modal.style.display = 'flex';
-
+    cartInfo.innerHTML = `
+    <img src="./imagini/emptyCart.svg" alt="emptyCart">
+    <h2>Of, e gol!</h2>
+    <p>Pentru livrare comanda minimă este de 34,90 lei</p>
+`
 }
 function closeModal() {
     modal.style.right = '-100%';
     buttonContainer.classList.remove('overlay');
+    addAllProductsHere.innerHTML = ''
 
-    cart.innerHTML = `
-        <img src="./imagini/emptyCart.svg" alt="emptyCart">
-        <h2>Of, e gol!</h2>
-        <p>Pentru livrare comanda minimă este de 34,90 lei</p>
-    `
 }
 
 openCart.addEventListener('click', openModal);
@@ -32,11 +33,8 @@ window.onclick = function (event) {
     if (event.target == buttonContainer) {
         modal.style.right = '-100%';
         buttonContainer.classList.remove('overlay');
-        cart.innerHTML = `
-        <img src="./imagini/emptyCart.svg" alt="emptyCart">
-        <h2>Of, e gol!</h2>
-        <p>Pentru livrare comanda minimă este de 34,90 lei</p>
-    `
+
+    addAllProductsHere.innerHTML = ''
     }
 
     
@@ -70,6 +68,7 @@ const products = [
 addProduct.addEventListener('click', addProducts);
 
 function addProducts() {
+    addAllProductsHere.innerHTML = ''
     function truncateString(str, num) {
     
         if (str.length <= num) {
@@ -79,10 +78,10 @@ function addProducts() {
       }
 
      const arr = products.map((product, index) => {
-
+        
        const truncate = `${product.continut}`
        const trc = truncate.slice('')
-        cart.innerHTML = cart.innerHTML +
+        addAllProductsHere.innerHTML = addAllProductsHere.innerHTML + 
             `
         <div class="product__container">
             <div class="product_wrp">
